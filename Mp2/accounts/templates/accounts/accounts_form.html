@@ -1,0 +1,15 @@
+{% extends 'items/base.html' %}
+{% block body %}
+    <form action="" method="post" enctype="multipart/form-data" id="pagecontent">
+        {% csrf_token %}
+        {% include 'items/form_template.html' %}
+        {% for field2 in profile %}
+        <label id = "text">{{ field2.label_tag }}</label>
+        <div>{{ field2 }}</div>
+        {% endfor %}
+
+        <div id = "pagecontent">
+            <button type = "submit">{{ title }}</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,121 @@
+body {
+    background: white url("bg.jpg");
+}
+#banner {
+    background-color: mediumspringgreen;
+    font-size: 45;
+    height: 80;
+
+}
+
+#title {
+    position: relative;
+    top: 13px;
+    left: 20px;
+    font-family: fantasy;
+    color: gray;
+}
+
+#subbanner {
+    background-color: green;
+    font-size: 20;
+    height: 30;
+}
+
+#subtitle {
+    position: relative;
+    top: 3px;
+    left: 20px;
+    font-family: fantasy;
+    color: white;
+}
+
+#btn {
+    position: absolute;
+    right: 20px;
+    top: 3px;
+}
+
+button {
+    background-color: darkgreen;
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+#content {
+    position: relative;
+}
+
+#text {
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: whitesmoke;
+}
+
+#arrowcontent {
+    position: absolute;
+    right: 0;
+
+}
+.naviarrows {
+    position: relative;
+    right: 0px;
+    font-size = 30px;
+}
+
+#pagecontent {
+    position: relative;
+    top: 20px;
+    margin-left: 20px;
+}
+
+.itemposter {
+    position: relative;
+    left: 20px;;
+}
+
+a:link {
+    color: darkcyan;
+}
+
+.post {
+    position: relative;
+    top: 30px;
+}
+
+.thumb {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.itemposter {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size:25;
+    padding: 3px 3px;
+    text-align: center;
+    border: solid green 2px;
+    background-color: whitesmoke;
+}
+
+.itemname {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size:25;
+    padding: 3px 3px;
+    text-align: center;
+    border: solid green 2px;
+    background-color: whitesmoke;
+}
+
+.itemprice {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size:20;
+    padding: 1px 1px;
+    text-align: center;
+    border: solid green 2px;
+    background-color: whitesmoke;
+}
+

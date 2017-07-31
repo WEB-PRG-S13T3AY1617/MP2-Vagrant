@@ -1,0 +1,16 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+    <div id="pagecontent">
+        {% load thumbnail %}
+        {% thumbnail item.item_picture 400x400 as g %}
+        <div><img src = "{{ g.url }}" id = "#thumb{{ item.id }}" class="thumb"></div>
+        <p><span class="itemname">{{item.item_name}}</span></p>
+        <p><span class="itemprice">PHP {{item.item_price}}</span></p>
+        <p><span class="itemposter"><span>Username: </span> <a href = "{% url 'accounts:profile' item.item_poster.id %}">{{item.item_poster}}</a></span></p>
+        <p><span id ="text">Description: {{item.item_info}}</span></p>
+        <p><span id ="text">Type: {{item.item_type}}</span></p>
+        <p><span id ="text">Course Code: {{item.item_academic_coursename}}</span></p>
+        <p><span id ="text">Quantity: {{item.item_quantity}}</span></p>
+    </div>
+{% endblock %}

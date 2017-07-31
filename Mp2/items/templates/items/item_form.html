@@ -1,0 +1,10 @@
+{% extends 'items/base.html' %}
+{% block body %}
+    <form action="" method="post" enctype="multipart/form-data" id ="pagecontent">
+        {% csrf_token %}
+        {% include 'items/form_template.html' %}
+        <div id="pagecontent">
+            <button type = "submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}

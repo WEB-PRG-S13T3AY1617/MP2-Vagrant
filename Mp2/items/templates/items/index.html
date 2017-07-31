@@ -1,0 +1,44 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+        <div id ="pagecontent">
+
+        {% for item in users %}
+            {% load thumbnail %}
+            {% thumbnail item.item_picture 300x300 as g %}
+            <div ><img src = "{{ g.url }}" id = "thumb{{ item.id }}" class="thumb"></div>
+            <div id="pagecontent">
+            <a href = "{% url 'items:detail' item.id %}" class="itemname">{{ item.item_name }}</a>
+                <span id="text">by</span>
+                <a href = "{% url 'accounts:profile' item.item_poster.id %}" class="itemposter">{{ item.item_poster }}</a>
+            <p><span class="itemprice">PHP {{ item.item_price }}</span></p>
+                <br>
+            </div>
+        {% endfor %}
+
+        </div>
+    <div id ="arrowcontent">
+        <span id ="text">
+{% if is_paginated %}
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}" class = "naviarrows">&laquo;</a>
+    {% else %}
+      <span class = "naviarrows">&laquo;</span>
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <span class = "naviarrows">{{ i }} <span class = "naviarrows">(current)</span></span>
+      {% else %}
+        <a href="?page={{ i }}" class = "naviarrows">{{ i }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}" class = "naviarrows">&raquo;</a>
+    {% else %}
+      <span class = "naviarrows">&raquo;</span>
+    {% endif %}
+{% endif %}
+        </span>
+    </div>
+{% endblock %}
+    

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'items/style.css' %}" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script>
+         $(document).ready(function() {
+            $(".post").click(function(){
+                window.location.href = "{% url 'items:item-add' %}";
+            })
+
+            $(".login").click(function(){
+                window.location.href = "{% url 'accounts:login' %}";
+            })
+
+            $(".logout").click(function(){
+                window.location.href = "{% url 'accounts:logout' %}";
+            })
+
+            $(".register").click(function(){
+                window.location.href = "{% url 'accounts:register' %}";
+            })
+
+            $("#title").click(function(){
+                window.location.href = "{% url 'items:index' %}";
+            })
+             
+            $('#title').hover(function() {
+                $(this).css('cursor','pointer');
+            })
+         });
+        </script>
+    </head>
+    <body>
+        <div id = 'banner'>
+            <span id = 'title'>New Beginnings MarketPlace</span>
+            <span id = 'btn'>
+                {% if user.is_authenticated %}
+                <button id="content" class="post">Post Item</button>
+                {% else %}
+                <button id="content" class="login">Log In</button> <button id="content" class="register">Register</button>
+                {% endif %}
+            </span>
+        </div>
+        <div id = "subbanner"><span id="subtitle">{{ title }}</span></div>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
